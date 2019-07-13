@@ -20,13 +20,13 @@ public class AccountController {
 
 
     @GetMapping("/list")
-    public String listCustomers() {
+    public String listCustomers(Model theModel) {
 
         //get Accounts from dao
-//        List<Account> theAccounts = accountService.getAccounts();
+        List<Account> theAccounts = accountService.getAccounts();
 
         // add users to the SpringMVC model
-//        theModel.addAttribute("accounts", theAccounts);
+        theModel.addAttribute("accounts", theAccounts);
 
         System.out.println("================================= I AM HERE =======================");
         return "list-accounts";
