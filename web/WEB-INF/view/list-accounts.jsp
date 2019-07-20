@@ -17,11 +17,11 @@
 
 Demo
 
-    <%--<div>--%>
-        <%--<c:forEach var="tempAccount" items="${accounts}">--%>
-            <%--<h2>${tempUser.name} , ${tempUser.age}</h2>--%>
-        <%--</c:forEach>--%>
-    <%--</div>--%>
+    <div>
+        <c:forEach var="tempAccount" items="${accounts}">
+            <h2>${tempUser.name} , ${tempUser.age}</h2>
+        </c:forEach>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,7 @@
+socmour/spring/mygrades/Entity/Account.class
+socmour/spring/mygrades/Service/AccountServiceImpl.class
+socmour/spring/mygrades/Controller/AccountController.class
+socmour/spring/mygrades/MainTests/MainTest.class
+socmour/spring/mygrades/DAO/AccountDAO.class
+socmour/spring/mygrades/Service/AccountService.class
+socmour/spring/mygrades/Config/DemoConfig.class
