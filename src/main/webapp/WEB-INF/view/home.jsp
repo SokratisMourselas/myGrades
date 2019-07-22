@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <h1>Home Page</h1>
+    <h2>Home Page</h2>
 <hr>
 <h3>Welcome to the app</h3>
 
