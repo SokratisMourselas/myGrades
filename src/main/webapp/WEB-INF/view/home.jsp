@@ -8,11 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
 
-    Demo Body
+    <h1>Home Page</h1>
+<hr>
+<h3>Welcome to the app</h3>
 
 </body>
 </html>
