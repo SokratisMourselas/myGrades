@@ -17,7 +17,7 @@
 
 <h3>This meeting is only for managers of the company</h3>
 
-<a href="${pageContext.request.contextPath}/">Go back to Home Page</a>
+<a href="${pageContext.request.contextPath}/employees">Go back to Home Page</a>
 
 </body>
 </html>
