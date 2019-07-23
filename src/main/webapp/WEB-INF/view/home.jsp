@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: smoursel
@@ -16,12 +18,16 @@
     <h2>Home Page</h2>
 <hr>
 <h3>Welcome to the app</h3>
-<form:form action="${pageContext.request.contextPath}/logout"
-           method="POST">
 
-    <input type="submit" value="Logout"/>
+    <p>
+    User: <security:authentication property="principal.username"/><br>
+    Role(s): <security:authentication property="principal.authorities"/>
+    </p><br>
 
-</form:form>
+    <form:form action="${pageContext.request.contextPath}/logout"
+               method="POST">
+        <input type="submit" value="Logout"/>
+    </form:form>
 
 
 </body>

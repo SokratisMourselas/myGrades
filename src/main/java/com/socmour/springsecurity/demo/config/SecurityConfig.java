@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth.inMemoryAuthentication()
                 .withUser(userBinder.username("John").password("test123").roles("EMPLOYEE"))
-                .withUser(userBinder.username("Mary").password("test123").roles("MANAGER"))
+                .withUser(userBinder.username("Mary").password("test123").roles("MANAGER", "ADMIN"))
                 .withUser(userBinder.username("Mark").password("test123").roles("ADMIN"))
         ;
 
@@ -32,13 +32,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest().authenticated()
+                .antMatchers("/").permitAll()  // allow public access to home page
+                .antMatchers("/employees").hasRole("EMPLOYEE")
+                .antMatchers("/leaders/**").hasRole("MANAGER")
+                .antMatchers("/systems/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
-                    .loginPage("/showLoginForm")
-                    .loginProcessingUrl("/authenticateTheUser")
-                    .permitAll()
+                .loginPage("/showLoginForm")
+                .loginProcessingUrl("/authenticateTheUser")
+                .permitAll()
                 .and()
-                .logout().permitAll();
+                .logout()
+                .logoutSuccessUrl("/")  // after logout then redirect to landing page (root)
+                .permitAll();
     }
 }
