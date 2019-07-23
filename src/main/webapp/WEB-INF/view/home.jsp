@@ -30,8 +30,12 @@
     </form:form>
 
 
-    <p><a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a> (Only for Managers)</p>
-    <p><a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a> (Only for Admins)</p>
+    <security:authorize access="hasRole('MANAGER')">
+        <p><a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a> (Only for Managers)</p>
+    </security:authorize>
+    <security:authorize access="hasRole('ADMIN')">
+        <p><a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a> (Only for Admins)</p>
+    </security:authorize>
 
 
 
