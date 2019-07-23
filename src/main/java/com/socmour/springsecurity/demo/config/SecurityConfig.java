@@ -1,5 +1,6 @@
 package com.socmour.springsecurity.demo.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,24 +9,20 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 
+import javax.sql.DataSource;
+
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    public DataSource securityDataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-        // in memory authentication
-
-        UserBuilder userBinder = User.withDefaultPasswordEncoder();
-
-        auth.inMemoryAuthentication()
-                .withUser(userBinder.username("John").password("test123").roles("EMPLOYEE"))
-                .withUser(userBinder.username("Mary").password("test123").roles("EMPLOYEE", "MANAGER"))
-                .withUser(userBinder.username("Mark").password("test123").roles("EMPLOYEE", "ADMIN"))
-        ;
+        auth.jdbcAuthentication().dataSource(securityDataSource);
 
     }
 
