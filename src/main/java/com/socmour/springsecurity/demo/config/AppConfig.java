@@ -54,7 +54,7 @@ public class AppConfig {
 
             securityDataSource.setInitialPoolSize(Integer.parseInt(env.getProperty("connection.pool.initialPoolSize")));
             securityDataSource.setMinPoolSize(Integer.parseInt(env.getProperty("connection.pool.minPoolSize")));
-            securityDataSource.setMaxPoolSize(Integer.parseInt(env.getProperty("connection.pool.miaxPoolSize")));
+            securityDataSource.setMaxPoolSize(Integer.parseInt(env.getProperty("connection.pool.maxPoolSize")));
             securityDataSource.setMaxIdleTime(Integer.parseInt(env.getProperty("connection.pool.maxIdleTime")));
 
 
