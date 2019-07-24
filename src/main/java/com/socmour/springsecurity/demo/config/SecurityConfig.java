@@ -6,8 +6,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.User.UserBuilder;
 
 import javax.sql.DataSource;
 
@@ -15,15 +13,14 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
+    // add a reference to our security data source
     @Autowired
-    public DataSource securityDataSource;
-
+    private DataSource securityDataSource;
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
+    protected void configure(AuthenticationManagerBuilder auth) throws
+            Exception {
+        // use jdbc authentication ... oh yeah!!!
         auth.jdbcAuthentication().dataSource(securityDataSource);
-
     }
 
     @Override
