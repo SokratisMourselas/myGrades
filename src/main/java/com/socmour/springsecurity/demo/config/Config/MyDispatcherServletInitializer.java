@@ -1,5 +1,6 @@
-package com.socmour.springsecurity.demo.config;
+package com.socmour.springsecurity.demo.config.Config;
 
+import com.socmour.springsecurity.demo.config.Config.AppConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class MyDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

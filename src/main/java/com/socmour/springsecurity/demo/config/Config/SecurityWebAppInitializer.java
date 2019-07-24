@@ -1,4 +1,4 @@
-package com.socmour.springsecurity.demo.config;
+package com.socmour.springsecurity.demo.config.Config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
