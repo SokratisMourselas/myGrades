@@ -12,7 +12,7 @@ public class Student implements User {
 
     @Override
     public String isActive() {
-        return null;
+        return "Active";
     }
 
     public Student() {}
