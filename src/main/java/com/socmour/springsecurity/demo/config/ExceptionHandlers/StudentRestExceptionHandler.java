@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class StudentRestExceptionHandler {
 
+    // @StudentNotFoundException Handler
     @ExceptionHandler
     public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc){
 
@@ -20,7 +21,7 @@ public class StudentRestExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    //Generic Exception Handler
+    // @Generic Exception Handler
     @ExceptionHandler
     public ResponseEntity<StudentErrorResponse> handleException(Exception exc){
         StudentErrorResponse error = new StudentErrorResponse();
