@@ -1,12 +1,12 @@
 package com.socmour.springsecurity.demo.config.APIs;
 
 import com.socmour.springsecurity.demo.config.Entities.Student;
-import com.socmour.springsecurity.demo.config.ExceptionHandlers.StudentErrorResponse;
 import com.socmour.springsecurity.demo.config.ExceptionHandlers.StudentNotFoundException;
 import com.socmour.springsecurity.demo.config.HelperClasses.MockEntities;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -31,7 +31,7 @@ public class StudentRestController {
     public Student getStudent(@PathVariable int studentId){
 
         //check studentId against size of list
-        if ((studentId>= studentList.size() || (studentId<0))){
+        if ((studentId > studentList.size() || (studentId < 0))) {
             throw new StudentNotFoundException("Student Id not found - " + studentId);
         }
 
