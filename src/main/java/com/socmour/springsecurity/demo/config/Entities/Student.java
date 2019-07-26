@@ -2,7 +2,7 @@ package com.socmour.springsecurity.demo.config.Entities;
 
 import java.util.Date;
 
-public class Student implements User {
+public class Student implements Person {
 
     private int id;
     private String firstName;
