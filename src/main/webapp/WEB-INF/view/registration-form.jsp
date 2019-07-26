@@ -49,6 +49,9 @@
 
                 Password: <form:password path="password" placeholder="password" class="form-control" />
 
+                Confirm Password: <form:password path="matchingPassword" placeholder="password" class="form-control" />
+
+
                 First Name: <form:input path="firstName" placeholder="first name" class="form-control" />
                 <button type="submit" class="btn btn-primary">Register</button>
             </form:form>

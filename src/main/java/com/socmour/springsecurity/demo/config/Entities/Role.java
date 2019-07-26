@@ -1,11 +1,9 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "authority")
 public class Role {
 
 
@@ -13,21 +11,19 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "name")
+
+    @Column(name = "authority")
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
-    private Set<User> users = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "username")
+    private User user;
 
     public Role() {
     }
 
     public Role(String name) {
         this.name = name;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getName() {

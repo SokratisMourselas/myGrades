@@ -1,7 +1,7 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,12 +32,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany
-    @JoinTable(name = "authorities",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "role_id") })
-    private Collection<Role> roles;
-
+    @OneToMany(mappedBy = "name")
+    private List<Role> roles;
 
     public User() {
     }
@@ -105,10 +101,17 @@ public class User {
 
 
     public void setRoles(List<Role> roles) {
-        this.roles = roles;
+
+        if (roles.isEmpty()){
+            this.roles = roles;
+            return;
+        }
+
+        roles = new ArrayList<Role>();
+
     }
 
-    public Collection<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 }

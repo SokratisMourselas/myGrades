@@ -3,6 +3,7 @@ package com.socmour.springsecurity.demo.config.DAO;
 import com.socmour.springsecurity.demo.config.Entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 // now retrieve/read from database using username
-        Query<User> theQuery = currentSession.createQuery("from User where username =: uName", User.class);
+        Query<User> theQuery = currentSession.createQuery("from User as u where u.username =: uName", User.class);
         theQuery.setParameter("uName", theUserName);
         User theUser = null;
         try {
