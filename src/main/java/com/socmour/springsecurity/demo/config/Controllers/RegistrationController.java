@@ -37,18 +37,18 @@ public class RegistrationController {
             @Valid @ModelAttribute("crmUser") CrmUser theCrmUser,
             BindingResult theBindingResult,
             Model theModel) {
-    // form validation
+
             // form validation
             if (theBindingResult.hasErrors()) {
                 return "registration-form";
             }
-//    // check the database if user already exists
-//            User existing = userService.findByUserName(theCrmUser.getUserName());
-//            if (existing != null) {
-//                theModel.addAttribute("crmUser", new CrmUser());
-//                theModel.addAttribute("registrationError", "User name already exists.");
-//                return "registration-form";
-//            }
+    // check the database if user already exists
+            User existing = userService.findByUserName(theCrmUser.getUserName());
+            if (existing != null) {
+                theModel.addAttribute("crmUser", new CrmUser());
+                theModel.addAttribute("registrationError", "User name already exists.");
+                return "registration-form";
+            }
         // create user account
         userService.save(theCrmUser);
 

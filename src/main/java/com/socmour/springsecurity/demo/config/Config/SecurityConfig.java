@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
 import javax.sql.DataSource;
 
 
@@ -21,13 +22,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
+
     // add a reference to our security data source
     @Autowired
     private DataSource securityDataSource;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws
             Exception {
-        // use jdbc authentication ... oh yeah!!!
         auth.jdbcAuthentication().dataSource(securityDataSource);
     }
 
@@ -57,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     //authenticationProvider bean definition
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {

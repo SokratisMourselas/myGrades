@@ -154,12 +154,11 @@ public class AppConfig implements WebMvcConfigurer {
         String propVal = env.getProperty(propName);
 
         // now convert to int
+        assert propVal != null;
         int intPropVal = Integer.parseInt(propVal);
 
         return intPropVal;
     }
-
-
 
     @Bean
     @Autowired

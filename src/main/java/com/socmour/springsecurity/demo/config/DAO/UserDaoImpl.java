@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 // now retrieve/read from database using username
-        Query<User> theQuery = currentSession.createQuery("from User where username=:uName", User.class);
+        Query<User> theQuery = currentSession.createQuery("from User where username =: uName", User.class);
         theQuery.setParameter("uName", theUserName);
         User theUser = null;
         try {
