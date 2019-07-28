@@ -32,7 +32,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "authority")
+    @OneToMany(mappedBy = "user")
     private List<Role> roles;
 
     public User() {
