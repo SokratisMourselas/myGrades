@@ -21,7 +21,7 @@ public class User {
     private String password;
 
     @Column(name = "enabled")
-    private String enabled;
+    private int enabled;
 
     @Column(name = "firstName")
     private String firstName;
@@ -32,13 +32,13 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "name")
+    @OneToMany(mappedBy = "authority")
     private List<Role> roles;
 
     public User() {
     }
 
-    public User(String username, String password, String enabled, String firstName, String lastName, String email) {
+    public User(String username, String password, int enabled, String firstName, String lastName, String email) {
         this.username = username;
         this.password = password;
         this.enabled = enabled;
@@ -59,7 +59,7 @@ public class User {
         return password;
     }
 
-    public String getEnabled() {
+    public int getEnabled() {
         return enabled;
     }
 
@@ -83,7 +83,7 @@ public class User {
         this.password = password;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(int enabled) {
         this.enabled = enabled;
     }
 
@@ -102,12 +102,7 @@ public class User {
 
     public void setRoles(List<Role> roles) {
 
-        if (roles.isEmpty()){
             this.roles = roles;
-            return;
-        }
-
-        roles = new ArrayList<Role>();
 
     }
 

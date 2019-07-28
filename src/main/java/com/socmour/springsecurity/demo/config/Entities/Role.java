@@ -13,9 +13,9 @@ public class Role {
     private Long id;
 
     @Column(name = "authority")
-    private String name;
+    private String authority;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "username")
     private User user;
 
@@ -23,14 +23,26 @@ public class Role {
     }
 
     public Role(String name) {
-        this.name = name;
+        this.authority = name;
     }
 
-    public String getName() {
-        return name;
+    public String getAuthority() {
+        return authority;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAuthority(String name) {
+        this.authority = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

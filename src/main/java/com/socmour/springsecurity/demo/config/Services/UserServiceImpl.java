@@ -13,7 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -43,10 +42,11 @@ public class UserServiceImpl implements UserService {
         user.setUsername(crmUser.getUserName());
         user.setPassword(passwordEncoder.encode(crmUser.getPassword()));
         user.setFirstName(crmUser.getFirstName());
+        user.setEnabled(1);
 //        user.setLastName(crmUser.getLastName());
 //        user.setEmail(crmUser.getEmail());
 // give user default role of "employee"
-        user.setRoles(Arrays.asList(new Role("ROLE_EMPLOYEE")));
+        user.setRoles(Collections.singletonList(new Role("ROLE_EMPLOYEE")));
 // save user in the database
         userDao.save(user);
     }
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
     private Collection<? extends GrantedAuthority>
     mapRolesToAuthorities(Collection<Role> roles) {
         return roles.stream().map(role -> new
-                SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+                SimpleGrantedAuthority(role.getAuthority())).collect(Collectors.toList());
     }
 }
 
