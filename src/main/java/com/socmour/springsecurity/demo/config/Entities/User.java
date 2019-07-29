@@ -1,13 +1,13 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "username", cascade = CascadeType.ALL)
     private List<Role> roles;
 
     public User() {
@@ -101,9 +101,7 @@ public class User {
 
 
     public void setRoles(List<Role> roles) {
-
             this.roles = roles;
-
     }
 
     public List<Role> getRoles() {

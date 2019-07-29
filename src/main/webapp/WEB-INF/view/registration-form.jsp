@@ -45,7 +45,7 @@
                     </div>
                 </c:if>
 
-                User name:  <form:input path="userName" placeholder="username" class="form-control" />
+                Username:  <form:input path="userName" placeholder="username" class="form-control" />
 
                 Password: <form:password path="password" placeholder="password" class="form-control" />
 

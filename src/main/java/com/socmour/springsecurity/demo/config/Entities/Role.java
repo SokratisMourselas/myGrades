@@ -1,10 +1,11 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "authority")
-public class Role {
+@Table(name = "authorities")
+public class Role implements Serializable {
 
 
     @Id
@@ -15,14 +16,25 @@ public class Role {
     @Column(name = "authority")
     private String authority;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username")
-    private User user;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    //    @ManyToOne
+//    @JoinColumn(name = "username", referencedColumnName = "username")
+//    private User user;
 
     public Role() {
     }
 
-    public Role(String name) {
+    public Role(String username, String name) {
+        this.username = username;
         this.authority = name;
     }
 
@@ -38,11 +50,11 @@ public class Role {
         return id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 }
