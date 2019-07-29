@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void save(CrmUser crmUser) {
-        User user = new User(crmUser.getUserName(), passwordEncoder.encode(crmUser.getPassword()), 1, crmUser.getFirstName(), "Manolios", "test@mail.com");
+        User user = new User(crmUser.getUserName(), passwordEncoder.encode(crmUser.getPassword()), 1, crmUser.getFirstName(), crmUser.getLastName(), crmUser.getEmail());
 // give user default role of "employee"
         user.setRoles(Collections.singletonList(new Role(user.getUsername(), "ROLE_EMPLOYEE")));
 // save user in the database

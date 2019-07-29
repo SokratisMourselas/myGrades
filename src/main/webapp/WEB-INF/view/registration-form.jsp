@@ -53,6 +53,10 @@
 
 
                 First Name: <form:input path="firstName" placeholder="first name" class="form-control" />
+
+                Last Name: <form:input path="lastName" placeholder="last name" class="form-control" />
+
+                Email: <form:input path="email" placeholder="email" class="form-control" />
                 <button type="submit" class="btn btn-primary">Register</button>
             </form:form>
         </div>
