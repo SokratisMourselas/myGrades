@@ -57,6 +57,13 @@
                 Last Name: <form:input path="lastName" placeholder="last name" class="form-control" />
 
                 Email: <form:input path="email" placeholder="email" class="form-control" />
+
+                <!-- Roles -->
+                <div style="margin-bottom: 25px" class="input-group">
+                    <form:select path="formRole" items="${roles}" class="form-control" />
+                </div>
+
+
                 <button type="submit" class="btn btn-primary">Register</button>
             </form:form>
         </div>

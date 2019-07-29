@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
     public void save(CrmUser crmUser) {
         User user = new User(crmUser.getUserName(), passwordEncoder.encode(crmUser.getPassword()), 1, crmUser.getFirstName(), crmUser.getLastName(), crmUser.getEmail());
 // give user default role of "employee"
-        user.setRoles(Collections.singletonList(new Role(user.getUsername(), "ROLE_EMPLOYEE")));
+        user.setRoles(Arrays.asList(new Role(user.getUsername(), "ROLE_EMPLOYEE"), new Role(user.getUsername(), crmUser.getFormRole())));
 // save user in the database
         userDao.save(user);
     }
