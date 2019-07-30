@@ -63,6 +63,8 @@ public class RegistrationController {
 
             // form validation
             if (result.hasErrors()) {
+                theModel.addAttribute("roles", roles);
+                theModel.addAttribute("registrationError", "Errors found during registration process.");
                 return "registration-form";
             }
     // check the database if user already exists
@@ -70,15 +72,16 @@ public class RegistrationController {
             if (existing != null) {
                 theModel.addAttribute("crmUser", new CrmUser());
                 theModel.addAttribute("roles", roles);
-                theModel.addAttribute("registrationError", "User name already exists.");
+                theModel.addAttribute("registrationError", "Username already exists.");
                 return "registration-form";
             }
 
         // give user default role of "employee"
         List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList();
         authorities.add(new SimpleGrantedAuthority("ROLE_EMPLOYEE"));
-// if the user selected role other than employee
-// then add that one too (multiple roles)
+
+        // if the user selected role other than employee
+        // then add that one too (multiple roles)
         String formRole = theCrmUser.getFormRole();
 
         if (!formRole.equals("ROLE_EMPLOYEE")) {
