@@ -28,12 +28,14 @@ public class RegistrationController {
 
     @PostConstruct
     protected void loadRoles() {
-// using hashmap, could also read this info from a database
+
+        // using hashmap, could also read this info from a database
         roles = new LinkedHashMap<String, String>();
-// key=the role, value=display to user
-        roles.put("ROLE_EMPLOYEE", "Employee");
-        roles.put("ROLE_MANAGER", "Manager");
-        roles.put("ROLE_ADMIN", "Admin");
+
+        // key=the role, value = display to user
+        roles.put("ROLE_GENERAL", "General");
+        roles.put("ROLE_STUDENT", "Student");
+        roles.put("ROLE_TEACHER", "Teacher");
     }
 
     @Autowired
@@ -78,13 +80,13 @@ public class RegistrationController {
 
         // give user default role of "employee"
         List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList();
-        authorities.add(new SimpleGrantedAuthority("ROLE_EMPLOYEE"));
+        authorities.add(new SimpleGrantedAuthority("ROLE_GENERAL"));
 
         // if the user selected role other than employee
         // then add that one too (multiple roles)
         String formRole = theCrmUser.getFormRole();
 
-        if (!formRole.equals("ROLE_EMPLOYEE")) {
+        if (!formRole.equals("ROLE_GENERAL")) {
             authorities.add(new SimpleGrantedAuthority(formRole));
         }
 

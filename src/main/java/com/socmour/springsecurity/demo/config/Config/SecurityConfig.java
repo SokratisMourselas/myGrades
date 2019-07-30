@@ -37,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()  // allow public access to home page
-                .antMatchers("/employees").hasRole("EMPLOYEE")
-                .antMatchers("/leaders/**").hasRole("MANAGER")
-                .antMatchers("/systems/**").hasRole("ADMIN")
+                .antMatchers("/general").hasRole("GENERAL")
+                .antMatchers("/students/**").hasRole("STUDENT")
+                .antMatchers("/teachers/**").hasRole("TEACHER")
                 .and()
                 .formLogin()
                     .loginPage("/showLoginForm")

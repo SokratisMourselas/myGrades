@@ -75,7 +75,7 @@
                 <br>
                 <!-- Roles -->
                 <div style="margin-bottom: 25px" class="input-group">
-                    <form:select path="formRole" items="${roles}" class="form-control" />
+                    User type: <form:select path="formRole" items="${roles}" class="form-control" />
                 </div>
 
                 <button type="submit" class="btn btn-primary">Register</button>

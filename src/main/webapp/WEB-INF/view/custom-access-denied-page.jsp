@@ -16,7 +16,7 @@
 <hr>
 <i>If you still require access, please contact a Systems Administrator</i>
 <br><br>
-<a href="${pageContext.request.contextPath}/employees">Go back to Home Page</a>
+<a href="${pageContext.request.contextPath}/general">Go back to Home Page</a>
 
 </body>
 </html>

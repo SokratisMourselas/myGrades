@@ -29,11 +29,11 @@ CREATE TABLE IF NOT EXISTS `authorities` (
 DELETE FROM `authorities`;
 /*!40000 ALTER TABLE `authorities` DISABLE KEYS */;
 INSERT INTO `authorities` (`username`, `authority`, `id`) VALUES
-	('john', 'ROLE_EMPLOYEE', NULL),
-	('mark', 'ROLE_EMPLOYEE', NULL),
-	('mark', 'ROLE_MANAGER', NULL),
-	('mary', 'ROLE_ADMIN', NULL),
-	('mary', 'ROLE_EMPLOYEE', NULL);
+	('john', 'ROLE_GENERAL', NULL),
+	('mark', 'ROLE_GENERAL', NULL),
+	('mark', 'ROLE_STUDENT', NULL),
+	('mary', 'ROLE_TEACHER', NULL),
+	('mary', 'ROLE_GENERAL', NULL);
 /*!40000 ALTER TABLE `authorities` ENABLE KEYS */;
 
 -- Dumping structure for table mygradesdb.students

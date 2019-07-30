@@ -11,19 +11,19 @@ public class DemoController {
         return "homepage";
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/general")
     public String showHome() {
         return "home";
     }
 
-    @GetMapping("/leaders")
+    @GetMapping("/students")
     public String showLeadersPage() {
-        return "leaders-page";
+        return "students-page";
     }
 
-    @GetMapping("/systems")
+    @GetMapping("/teachers")
     public String showAdminsPage() {
-        return "systems-page";
+        return "teachers-page";
     }
 
 }
