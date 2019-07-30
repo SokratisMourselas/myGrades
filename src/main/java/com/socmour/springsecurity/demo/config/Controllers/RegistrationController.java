@@ -90,7 +90,6 @@ public class RegistrationController {
             authorities.add(new SimpleGrantedAuthority(formRole));
         }
 
-
         // create user account
         userService.save(theCrmUser);
 
