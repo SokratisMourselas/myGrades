@@ -20,36 +20,57 @@ USE `mygradesdb`;
 CREATE TABLE IF NOT EXISTS `authorities` (
   `username` varchar(50) NOT NULL,
   `authority` varchar(50) NOT NULL,
-  UNIQUE KEY `authorities_idx_1` (`username`,`authority`),
-  CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) DEFAULT NULL,
+  UNIQUE KEY `username_authority` (`username`,`authority`),
+  KEY `FK_authorities_roles` (`authority`)
+) ENGINE=InnoDB DEFAULT CHARSET=ascii;
 
 -- Dumping data for table mygradesdb.authorities: ~5 rows (approximately)
 DELETE FROM `authorities`;
 /*!40000 ALTER TABLE `authorities` DISABLE KEYS */;
-INSERT INTO `authorities` (`username`, `authority`) VALUES
-	('john', 'ROLE_EMPLOYEE'),
-	('mark', 'ROLE_ADMIN'),
-	('mark', 'ROLE_EMPLOYEE'),
-	('mary', 'ROLE_EMPLOYEE'),
-	('mary', 'ROLE_MANAGER');
+INSERT INTO `authorities` (`username`, `authority`, `id`) VALUES
+	('john', 'ROLE_EMPLOYEE', NULL),
+	('mark', 'ROLE_EMPLOYEE', NULL),
+	('mark', 'ROLE_MANAGER', NULL),
+	('mary', 'ROLE_ADMIN', NULL),
+	('mary', 'ROLE_EMPLOYEE', NULL);
 /*!40000 ALTER TABLE `authorities` ENABLE KEYS */;
+
+-- Dumping structure for table mygradesdb.students
+CREATE TABLE IF NOT EXISTS `students` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(60) NOT NULL,
+  `lastName` varchar(60) NOT NULL,
+  `dateOfBirth` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=ascii;
+
+-- Dumping data for table mygradesdb.students: ~0 rows (approximately)
+DELETE FROM `students`;
+/*!40000 ALTER TABLE `students` DISABLE KEYS */;
+/*!40000 ALTER TABLE `students` ENABLE KEYS */;
 
 -- Dumping structure for table mygradesdb.users
 CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `enabled` int(1) NOT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `password` char(80) NOT NULL,
+  `enabled` int(1) DEFAULT NULL,
+  `firstName` varchar(50) DEFAULT NULL,
+  `lastName` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table mygradesdb.users: ~3 rows (approximately)
+-- Dumping data for table mygradesdb.users: ~4 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
-	('john', '{noop}test123', 1),
-	('mark', '{noop}test123', 1),
-	('mary', '{noop}test123', 1);
+INSERT INTO `users` (`id`, `username`, `password`, `enabled`, `firstName`, `lastName`, `email`) VALUES
+	(1, 'john', '$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K', 1, '', '', ''),
+	(2, 'mark', '$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K', 1, '', '', ''),
+	(3, 'mary', '$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K', 1, '', '', ''),
+	(4, 'sokratis', '$2a$10$rvmhPXkK5F9ZqGgJczu/8uP0T99BYh8kZud6Tmq.ImLP/3/srWW/K', NULL, 'test', NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
