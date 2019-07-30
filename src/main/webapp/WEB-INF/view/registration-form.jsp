@@ -45,19 +45,25 @@
                     </div>
                 </c:if>
 
+                <p>
                 Username:  <form:input path="userName" placeholder="username" class="form-control" />
-
+                </p>
+                <p>
                 Password: <form:password path="password" placeholder="password" class="form-control" />
-
+                </p>
+                <p>
                 Confirm Password: <form:password path="matchingPassword" placeholder="password" class="form-control" />
-
-
+                </p>
+                <p>
                 First Name: <form:input path="firstName" placeholder="first name" class="form-control" />
-
+                </p>
+                <p>
                 Last Name: <form:input path="lastName" placeholder="last name" class="form-control" />
-
+                </p>
+                <p>
                 Email: <form:input path="email" placeholder="email" class="form-control" />
-
+                </p>
+                <br>
                 <!-- Roles -->
                 <div style="margin-bottom: 25px" class="input-group">
                     <form:select path="formRole" items="${roles}" class="form-control" />

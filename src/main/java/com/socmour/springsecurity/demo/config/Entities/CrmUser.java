@@ -1,6 +1,7 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
 import com.socmour.springsecurity.demo.config.Validators.FieldMatch;
+import com.socmour.springsecurity.demo.config.Validators.ValidEmail;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -31,6 +32,7 @@ public class CrmUser {
 
         @NotNull(message = "is required")
         @Size(min = 1, message = "is required")
+        @ValidEmail
         private String email;
 
         private String formRole;
