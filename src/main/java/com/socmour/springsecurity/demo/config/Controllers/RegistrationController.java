@@ -58,11 +58,11 @@ public class RegistrationController {
     @PostMapping("/processRegistrationForm")
     public String processRegistrationForm(
             @Valid @ModelAttribute("crmUser") CrmUser theCrmUser,
-            BindingResult theBindingResult,
+            BindingResult result,
             Model theModel) {
 
             // form validation
-            if (theBindingResult.hasErrors()) {
+            if (result.hasErrors()) {
                 return "registration-form";
             }
     // check the database if user already exists

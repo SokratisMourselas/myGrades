@@ -21,6 +21,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
     <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .error{color: red}
+    </style>
+
 </head>
 <body>
 <!-- Registration Form -->
@@ -47,13 +51,17 @@
 
                 <p>
                 Username:  <form:input path="userName" placeholder="username" class="form-control" />
+                    <form:errors path="userName" cssClass="error"/>
                 </p>
                 <p>
                 Password: <form:password path="password" placeholder="password" class="form-control" />
+                    <form:errors path="password" cssClass="error"/>
                 </p>
                 <p>
                 Confirm Password: <form:password path="matchingPassword" placeholder="password" class="form-control" />
+                    <form:errors path="matchingPassword" cssClass="error"/>
                 </p>
+
                 <p>
                 First Name: <form:input path="firstName" placeholder="first name" class="form-control" />
                 </p>
@@ -62,13 +70,13 @@
                 </p>
                 <p>
                 Email: <form:input path="email" placeholder="email" class="form-control" />
+                    <form:errors path="email" cssClass="error"/>
                 </p>
                 <br>
                 <!-- Roles -->
                 <div style="margin-bottom: 25px" class="input-group">
                     <form:select path="formRole" items="${roles}" class="form-control" />
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">Register</button>
             </form:form>
