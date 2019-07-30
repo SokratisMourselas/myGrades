@@ -31,10 +31,10 @@
 
 
     <security:authorize access="hasRole('STUDENT')">
-        <p><a href="${pageContext.request.contextPath}/students">Leadership Meeting</a> (Only for Managers)</p>
+        <p><a href="${pageContext.request.contextPath}/students">Proceed as a Student</a></p>
     </security:authorize>
     <security:authorize access="hasRole('TEACHER')">
-        <p><a href="${pageContext.request.contextPath}/teachers">IT Systems Meeting</a> (Only for Admins)</p>
+        <p><a href="${pageContext.request.contextPath}/teachers">Proceed as a Teacher</a></p>
     </security:authorize>
 
 
