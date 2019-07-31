@@ -27,15 +27,15 @@ public class StudentRestController {
         return studentList;
     }
 
-    @GetMapping("/students/{studentId}")
-    public Student getStudent(@PathVariable int studentId){
-
-        //check studentId against size of list
-        if ((studentId > studentList.size() || (studentId < 0))) {
-            throw new StudentNotFoundException("Student Id not found - " + studentId);
-        }
-
-        //id = index-1
-        return studentList.get(studentId-1);
-    }
+//    @GetMapping("/students/{studentId}")
+//    public Student getStudent(@PathVariable int studentId){
+//
+//        //check studentId against size of list
+//        if ((studentId > studentList.size() || (studentId < 0))) {
+//            throw new StudentNotFoundException("Student Id not found - " + studentId);
+//        }
+//
+//        //id = index-1
+//        return studentList.get(studentId-1);
+//    }
 }
