@@ -21,7 +21,7 @@
         body {
             position: relative;
         }
-        #section1 {padding-top:50px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
+        #section1 {padding-top:70px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
         #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(147, 42, 58);}
         #section3 {padding-top:50px;height:500px;color: #000; background-color: rgba(159, 135, 28, 0.54);}
         #section41 {padding-top:50px;height:500px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
@@ -86,10 +86,15 @@
     </div>
     <div id="section2" class="container-fluid">
         <h1>Your Classes</h1>
-        <p>You have been registered to the following classes in the past:</p>
-        <p><a href="#">5th Junior</a></p>
-        <p><a href="#">6th Junior</a></p>
-        <p><a href="#">1st Senior</a> <span> (Currently enrolled) </span> </p>
+        <p>You have been registered to the following classes in the past:</p><br>
+        <div class="container">
+            <h2>Complete history:</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item">5th Junior</a>
+                <a href="#" class="list-group-item">6th Junior</a>
+                <a href="#" class="list-group-item">1st Senior <span> (Currently enrolled) </span> </a>
+            </div>
+        </div>
     </div>
     <div id="section3" class="container-fluid">
         <h1>Section 3</h1>
