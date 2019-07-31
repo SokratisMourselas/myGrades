@@ -106,7 +106,7 @@
     </div>
 
 
-    <div class="footer navbar-fixed-bottom">
+    <footer class="footer">
 
         <security:authentication property="principal.authorities"/>
         <security:authorize access="hasRole('STUDENT')">
@@ -116,7 +116,7 @@
             <p><a href="${pageContext.request.contextPath}/teachers">Proceed as a Teacher</a></p>
         </security:authorize>
 
-    </div>
+    </footer>
 
 </body>
 </html>
