@@ -34,6 +34,12 @@ public class UserServiceImpl implements UserService {
         return userDao.findByUserName(userName);
     }
 
+    @Override
+    @Transactional
+    public User findByUserEmail(String email) {// check the database if the user already exists
+        return userDao.findByUserEmail(email);
+    }
+
 
     @Override
     @Transactional

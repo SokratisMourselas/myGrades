@@ -24,7 +24,13 @@
 
 <div>
 
-    <div id="loginbox" style="margin-top: 50px;"
+    <div class="jumbotron text-center">
+        <h1>myGrades</h1>
+        <p>All academic achievements, in one place!</p>
+    </div>
+
+    <div class="container-fluid">
+        <div id="loginbox" style="margin-top: 50px;"
          class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
 
         <div class="panel panel-info">
@@ -49,7 +55,7 @@
                                 <c:if test="${param.error != null}">
 
                                     <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                        Invalid username and/or password.
+                                        Invalid username or password.
                                     </div>
 
                                 </c:if>
@@ -104,7 +110,7 @@
         </div>
 
     </div>
-
+    </div>
 </div>
 
 </body>

@@ -78,6 +78,15 @@ public class RegistrationController {
                 return "registration-form";
             }
 
+        // check the database if user already exists
+        User existingEmail = userService.findByUserEmail(theCrmUser.getEmail());
+        if (existingEmail != null) {
+            theModel.addAttribute("crmUser", new CrmUser());
+            theModel.addAttribute("roles", roles);
+            theModel.addAttribute("registrationError", "A user has already been registered under this provided email.");
+            return "registration-form";
+        }
+
         // give user default role of "employee"
         List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList();
         authorities.add(new SimpleGrantedAuthority("ROLE_GENERAL"));
