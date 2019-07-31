@@ -47,7 +47,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">5th Junior</a></li>
                             <li><a href="#">6th Junior</a></li>
-                            <li><a href="#">1st Senior</a></li>
+                            <li><a href="#">1st Senior<span> (Active) </span></a> </li>
                         </ul>
                     </li>
                     <li><a href="#">Current Lessons</a></li>
@@ -65,7 +65,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
                         <ul class="dropdown-menu">
-                            <li><i>Are you sure?</i></li>
+                            <li><i style="text-align: center">Are you sure?</i></li>
                             <li><a href="" onclick="$('#myHiddenFormId').submit(); return false;">Yes</a></li>
                             <li><a href="#">No</a></li>
                         </ul>
@@ -80,14 +80,16 @@
 
 
     <div id="section1" class="container-fluid">
-        <h1>Section 1</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <h1>Welcome to your personal myGrades Account</h1>
+        <p>Security is our first concern and we update this website regularly to ensure you are always safe.</p>
+        <p>If at any point you encounter any issue, please <a href="#">contact our team</a> immediately.</p>
     </div>
     <div id="section2" class="container-fluid">
-        <h1>Section 2</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <h1>Your Classes</h1>
+        <p>You have been registered to the following classes in the past:</p>
+        <p><a href="#">5th Junior</a></p>
+        <p><a href="#">6th Junior</a></p>
+        <p><a href="#">1st Senior</a> <span> (Currently enrolled) </span> </p>
     </div>
     <div id="section3" class="container-fluid">
         <h1>Section 3</h1>
