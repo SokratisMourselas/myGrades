@@ -107,7 +107,6 @@
 
 
     <footer class="footer">
-
         <security:authentication property="principal.authorities"/>
         <security:authorize access="hasRole('STUDENT')">
             <p><a href="${pageContext.request.contextPath}/students">Proceed as a Student</a></p>
@@ -115,7 +114,6 @@
         <security:authorize access="hasRole('TEACHER')">
             <p><a href="${pageContext.request.contextPath}/teachers">Proceed as a Teacher</a></p>
         </security:authorize>
-
     </footer>
 
 </body>

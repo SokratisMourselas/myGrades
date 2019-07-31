@@ -15,7 +15,7 @@ public class CrmUser {
         private String userName;
 
         @NotNull(message = "is required")
-        @Size(min = 1, message = "is required")
+        @Size(min = 8, message = "password must be at least 8 characters long.")
         private String password;
 
         @NotNull(message = "is required")
