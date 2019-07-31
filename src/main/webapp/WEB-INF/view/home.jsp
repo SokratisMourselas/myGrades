@@ -18,21 +18,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
-        .link-button {
-            background: none;
-            border: none;
-            color: blue;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 1em;
-            font-family: serif;
+        body {
+            position: relative;
         }
-        .link-button:focus {
-            outline: none;
-        }
-        .link-button:active {
-            color:red;
-        }
+        #section1 {padding-top:50px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
+        #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(147, 42, 58);}
+        #section3 {padding-top:50px;height:500px;color: #000; background-color: rgba(159, 135, 28, 0.54);}
+        #section41 {padding-top:50px;height:500px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
+        #section42 {padding-top:50px;height:500px;color: #fff; background-color: #7b9596;}
     </style>
 </head>
 <body>
@@ -44,21 +37,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">myGrades</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/general">myGrades</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/general">Home</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Classes<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Page 1-1</a></li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
+                            <li><a href="#">5th Junior</a></li>
+                            <li><a href="#">6th Junior</a></li>
+                            <li><a href="#">1st Senior</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
+                    <li><a href="#">Current Lessons</a></li>
+                    <li><a href="#">Projects</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -69,7 +62,14 @@
                             <li><a href="#">Settings</a></li>
                         </ul>
                     </li>
-                    <li><a href="" onclick="$('#myHiddenFormId').submit(); return false;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+                        <ul class="dropdown-menu">
+                            <li><i>Are you sure?</i></li>
+                            <li><a href="" onclick="$('#myHiddenFormId').submit(); return false;">Yes</a></li>
+                            <li><a href="#">No</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <form:form id="myHiddenFormId" action="${pageContext.request.contextPath}/logout"
                            method="POST" style="display: none">
@@ -77,18 +77,46 @@
             </div>
         </div>
     </nav>
-    <security:authentication property="principal.authorities"/>
 
 
+    <div id="section1" class="container-fluid">
+        <h1>Section 1</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Section 2</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+    <div id="section3" class="container-fluid">
+        <h1>Section 3</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+    <div id="section41" class="container-fluid">
+        <h1>Section 4 Submenu 1</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+    <div id="section42" class="container-fluid">
+        <h1>Section 4 Submenu 2</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
 
-    <security:authorize access="hasRole('STUDENT')">
-        <p><a href="${pageContext.request.contextPath}/students">Proceed as a Student</a></p>
-    </security:authorize>
-    <security:authorize access="hasRole('TEACHER')">
-        <p><a href="${pageContext.request.contextPath}/teachers">Proceed as a Teacher</a></p>
-    </security:authorize>
 
+    <div class="footer navbar-fixed-bottom">
 
+        <security:authentication property="principal.authorities"/>
+        <security:authorize access="hasRole('STUDENT')">
+            <p><a href="${pageContext.request.contextPath}/students">Proceed as a Student</a></p>
+        </security:authorize>
+        <security:authorize access="hasRole('TEACHER')">
+            <p><a href="${pageContext.request.contextPath}/teachers">Proceed as a Teacher</a></p>
+        </security:authorize>
+
+    </div>
 
 </body>
 </html>

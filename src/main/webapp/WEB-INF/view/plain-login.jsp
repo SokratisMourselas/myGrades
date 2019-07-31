@@ -26,7 +26,7 @@
 
     <div class="jumbotron text-center">
         <h1>myGrades</h1>
-        <p>All academic achievements, in one place!</p>
+        <p>All your academic achievements, in one place!</p>
     </div>
 
     <div class="container-fluid">
