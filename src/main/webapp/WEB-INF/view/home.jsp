@@ -47,7 +47,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">5th Junior</a></li>
                             <li><a href="#">6th Junior</a></li>
-                            <li><a href="#">1st Senior<span> (Active) </span></a> </li>
+                            <li><a href="#"><b>1st Senior<span> (Active) </span></b></a> </li>
                         </ul>
                     </li>
                     <li><a href="#">Current Lessons</a></li>
@@ -92,7 +92,7 @@
             <div class="list-group">
                 <a href="#" class="list-group-item">5th Junior</a>
                 <a href="#" class="list-group-item">6th Junior</a>
-                <a href="#" class="list-group-item">1st Senior <span> (Currently enrolled) </span> </a>
+                <a href="#" class="list-group-item"><b>1st Senior <span> (Currently enrolled) </span> </b></a>
             </div>
         </div>
     </div>
