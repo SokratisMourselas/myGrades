@@ -1,5 +1,7 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -17,6 +19,7 @@ public class User implements Serializable {
     @Column(name = "username")
     private String username;
 
+    @JsonIgnore
     @Column(name = "password")
     private String password;
 
