@@ -1,8 +1,9 @@
 package com.socmour.springsecurity.demo.config.APIs;
 
+import com.socmour.springsecurity.demo.config.Entities.Lesson;
 import com.socmour.springsecurity.demo.config.Entities.Student;
 import com.socmour.springsecurity.demo.config.ExceptionHandlers.StudentNotFoundException;
-import com.socmour.springsecurity.demo.config.HelperClasses.MockEntities;
+import com.socmour.springsecurity.demo.config.Services.LessonService;
 import com.socmour.springsecurity.demo.config.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +16,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class StudentRestController {
+public class MyRestController {
 
     public List<Student> studentList;
 
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private LessonService lessonService;
 
     @PostConstruct
     public void retrieveStudents(){
@@ -42,5 +46,10 @@ public class StudentRestController {
 
         //id = index-1
         return studentService.getStudentWithId(studentId);
+    }
+
+    @GetMapping("/lessons")
+    public List<Lesson> getAllLessons(){
+        return lessonService.getAllLessons();
     }
 }

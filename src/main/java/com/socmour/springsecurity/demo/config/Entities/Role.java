@@ -26,10 +26,6 @@ public class Role implements Serializable {
         this.username = username;
     }
 
-    //    @ManyToOne
-//    @JoinColumn(name = "username", referencedColumnName = "username")
-//    private User user;
-
     public Role() {
     }
 
