@@ -63,7 +63,7 @@ public class MyRestController {
         student.setLastName(lastName);
         student.setDateOfBirth(Calendar.getInstance().getTime());
 
-        User user = userService.findByUserEmail("socmour@hotmail.com");
+        User user = userService.findByUserEmail("garampatzis@pem.tuc.gr");
         student.setUser(user);
 
         return studentService.saveStudent(student);
