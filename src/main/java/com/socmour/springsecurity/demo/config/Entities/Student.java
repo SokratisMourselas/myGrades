@@ -1,13 +1,24 @@
 package com.socmour.springsecurity.demo.config.Entities;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "students")
 public class Student implements Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column
     private String firstName;
+
+    @Column
     private String lastName;
-    private String password;
+
+    @Column
     private Date dateOfBirth;
 
     @Override
@@ -17,11 +28,10 @@ public class Student implements Person {
 
     public Student() {}
 
-    public Student(int id, String firstName, String lastName, String password, Date dateOfBirth) {
+    public Student(int id, String firstName, String lastName, Date dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -43,14 +53,6 @@ public class Student implements Person {
 
     public void setlastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Date getDateOfBirth() {

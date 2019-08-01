@@ -29,9 +29,9 @@ public class MockEntities {
         }
 
         //retrieving student
-        Student newStudent1 = new Student(1, "Mad", "Max", "passwordPlaceholder", dateOfBirthMock);
-        Student newStudent2 = new Student(2, "Bob", "Builder", "passwordPlaceholder", dateOfBirthMock);
-        Student newStudent3 = new Student(3, "Dora", "Explorer", "passwordPlaceholder", dateOfBirthMock);
+        Student newStudent1 = new Student(1, "Mad", "Max", dateOfBirthMock);
+        Student newStudent2 = new Student(2, "Bob", "Builder", dateOfBirthMock);
+        Student newStudent3 = new Student(3, "Dora", "Explorer", dateOfBirthMock);
 
         studentsList.add(newStudent1);
         studentsList.add(newStudent2);
