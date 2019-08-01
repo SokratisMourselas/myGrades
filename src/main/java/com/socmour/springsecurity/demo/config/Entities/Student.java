@@ -32,6 +32,12 @@ public class Student implements Person {
 
     public Student() {}
 
+    public Student(String firstName, String lastName, Date dateOfBirth) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public Student(int id, String firstName, String lastName, Date dateOfBirth) {
         this.id = id;
         this.firstName = firstName;

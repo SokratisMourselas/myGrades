@@ -39,5 +39,14 @@ public class StudentDaoImpl implements StudentDao{
         return theQuery.getSingleResult();
     }
 
+    @Override
+    public Student saveStudent(Student student) {
+
+        // get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+        currentSession.saveOrUpdate(student);
+        return student;
+    }
+
 
 }

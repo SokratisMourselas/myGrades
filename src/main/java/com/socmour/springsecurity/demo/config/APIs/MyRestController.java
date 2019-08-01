@@ -2,16 +2,16 @@ package com.socmour.springsecurity.demo.config.APIs;
 
 import com.socmour.springsecurity.demo.config.Entities.Lesson;
 import com.socmour.springsecurity.demo.config.Entities.Student;
+import com.socmour.springsecurity.demo.config.Entities.User;
 import com.socmour.springsecurity.demo.config.ExceptionHandlers.StudentNotFoundException;
 import com.socmour.springsecurity.demo.config.Services.LessonService;
 import com.socmour.springsecurity.demo.config.Services.StudentService;
+import com.socmour.springsecurity.demo.config.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import java.util.Calendar;
 import java.util.List;
 
 @RestController
@@ -25,6 +25,9 @@ public class MyRestController {
 
     @Autowired
     private LessonService lessonService;
+
+    @Autowired
+    private UserService userService;
 
     @PostConstruct
     public void retrieveStudents(){
@@ -51,5 +54,18 @@ public class MyRestController {
     @GetMapping("/lessons")
     public List<Lesson> getAllLessons(){
         return lessonService.getAllLessons();
+    }
+
+    @PostMapping(("/lessons/saveStudent?firstName={firstName}&lastName={lastName}"))
+    public Student saveStudent(@PathVariable String firstName, @PathVariable String lastName){
+        Student student = new Student();
+        student.setFirstName(firstName);
+        student.setLastName(lastName);
+        student.setDateOfBirth(Calendar.getInstance().getTime());
+
+        User user = userService.findByUserEmail("socmour@hotmail.com");
+        student.setUser(user);
+
+        return studentService.saveStudent(student);
     }
 }
