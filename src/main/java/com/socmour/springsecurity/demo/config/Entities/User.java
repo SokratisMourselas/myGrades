@@ -32,7 +32,7 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "username", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "username", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Role> roles;
 
     public User() {
