@@ -24,7 +24,7 @@
         #section1 {padding-top:70px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
         #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(147, 42, 58);}
         #section3 {padding-top:50px;height:500px;color: #000; background-color: rgba(159, 135, 28, 0.54);}
-        #section41 {padding-top:50px;height:500px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
+        #section41 {padding-top:50px;padding-bottom:50px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
         #section42 {padding-top:50px;height:500px;color: #fff; background-color: #7b9596;}
     </style>
 </head>
@@ -50,8 +50,8 @@
                             <li><a href="#"><b>1st Senior<span> (Active) </span></b></a> </li>
                         </ul>
                     </li>
-                    <li><a href="#">Current Lessons</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#section3">Current Lessons</a></li>
+                    <li><a href="#section42">Projects</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -97,19 +97,86 @@
         </div>
     </div>
     <div id="section3" class="container-fluid">
-        <%--<h1>Section 3</h1>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
+        <h1>Current Lessons</h1>
+        <p>You are not currently enrolled in any lessons</p>
+        <p><a href="#" data-toggle="modal" data-target="#myModal">Add a lesson</a></p>
     </div>
     <div id="section41" class="container-fluid">
-        <%--<h1>Section 4 Submenu 1</h1>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>Los Angeles</h3>
+                        <p>LA is always so much fun!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>Chicago</h3>
+                        <p>Thank you, Chicago!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="ny.jpg" alt="New York" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
     </div>
     <div id="section42" class="container-fluid">
         <%--<h1>Section 4 Submenu 2</h1>--%>
         <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
         <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Available Courses</h4>
+                </div>
+                <div class="modal-body">
+                    <p>There are no available courses at the moment.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 

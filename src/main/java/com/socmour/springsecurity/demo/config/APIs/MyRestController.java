@@ -2,16 +2,17 @@ package com.socmour.springsecurity.demo.config.APIs;
 
 import com.socmour.springsecurity.demo.config.Entities.Lesson;
 import com.socmour.springsecurity.demo.config.Entities.Student;
-import com.socmour.springsecurity.demo.config.Entities.User;
 import com.socmour.springsecurity.demo.config.ExceptionHandlers.StudentNotFoundException;
 import com.socmour.springsecurity.demo.config.Services.LessonService;
 import com.socmour.springsecurity.demo.config.Services.StudentService;
 import com.socmour.springsecurity.demo.config.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
-import java.util.Calendar;
 import java.util.List;
 
 @RestController
