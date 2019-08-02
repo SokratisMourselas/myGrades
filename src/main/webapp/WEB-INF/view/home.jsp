@@ -25,7 +25,7 @@
         #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(147, 42, 58);}
         #section3 {padding-top:50px;height:500px;color: #000; background-color: rgba(159, 135, 28, 0.54);}
         #section41 {padding-top:50px;padding-bottom:50px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
-        #section42 {padding-top:50px;height:500px;color: #fff; background-color: #7b9596;}
+        #section42 {padding-top:50px;height:500px;color: #fff; background-color: rgba(7, 94, 10, 0.8);}
     </style>
 </head>
 <body>
@@ -153,9 +153,9 @@
 
     </div>
     <div id="section42" class="container-fluid">
-        <%--<h1>Section 4 Submenu 2</h1>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
-        <%--<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>--%>
+        <h1>Current Projects</h1>
+        <p>You do not have any pending Projects at the moment.</p>
+        <p><a href="#" data-toggle="modal" data-target="#myModal" style="color: red">Missing a Project?</a></p>
     </div>
 
     <!-- Modal -->
