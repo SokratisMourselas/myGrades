@@ -51,7 +51,8 @@ public class MyRestController {
         return studentService.getStudentWithId(studentId);
     }
 
-    @PostMapping(("/saveStudent?firstName={firstName}&lastName={lastName}"))
+    // Dummy POST method with GET for testing
+    @GetMapping(("/saveStudent/firstName={firstName}/lastName={lastName}"))
     public Student saveStudent(@PathVariable String firstName, @PathVariable String lastName){
         Student student = new Student();
         student.setFirstName(firstName);
