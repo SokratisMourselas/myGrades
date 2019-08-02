@@ -51,21 +51,21 @@ public class MyRestController {
         return studentService.getStudentWithId(studentId);
     }
 
-    @GetMapping("/lessons")
-    public List<Lesson> getAllLessons(){
-        return lessonService.getAllLessons();
-    }
-
-    @PostMapping(("/lessons/saveStudent?firstName={firstName}&lastName={lastName}"))
+    @PostMapping(("/saveStudent?firstName={firstName}&lastName={lastName}"))
     public Student saveStudent(@PathVariable String firstName, @PathVariable String lastName){
         Student student = new Student();
         student.setFirstName(firstName);
         student.setLastName(lastName);
         student.setDateOfBirth(Calendar.getInstance().getTime());
 
-        User user = userService.findByUserEmail("garampatzis@pem.tuc.gr");
+        User user = userService.findByUserEmail("socmour@hotmail.com");
         student.setUser(user);
 
         return studentService.saveStudent(student);
+    }
+
+    @GetMapping("/lessons")
+    public List<Lesson> getAllLessons(){
+        return lessonService.getAllLessons();
     }
 }
