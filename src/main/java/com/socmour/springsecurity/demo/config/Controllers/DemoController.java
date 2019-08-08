@@ -1,6 +1,8 @@
 package com.socmour.springsecurity.demo.config.Controllers;
 
+import com.socmour.springsecurity.demo.config.Entities.StudentFirstLastName;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -12,7 +14,9 @@ public class DemoController {
     }
 
     @GetMapping("/general")
-    public String showHome() {
+    public String showHome(Model theModel) {
+
+        theModel.addAttribute("student", new StudentFirstLastName());
         return "home";
     }
 

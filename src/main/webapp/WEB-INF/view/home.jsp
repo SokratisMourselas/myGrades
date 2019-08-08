@@ -99,7 +99,7 @@
     <div id="section3" class="container-fluid">
         <h1>Current Lessons</h1>
         <p>You are not currently enrolled in any lessons</p>
-        <p><a href="#" data-toggle="modal" data-target="#myModal">Add a lesson</a></p>
+        <p><a href="#" data-toggle="modal" data-target="#myModal">Add a Student</a></p>
     </div>
     <div id="section41" class="container-fluid">
 
@@ -155,7 +155,7 @@
     <div id="section42" class="container-fluid">
         <h1>Current Projects</h1>
         <p>You do not have any pending Projects at the moment.</p>
-        <p><a href="#" data-toggle="modal" data-target="#myModal" style="color: red">Missing a Project?</a></p>
+        <p><a href="#" data-toggle="modalStudent" data-target="#myModal" style="color: red">Missing a Project?</a></p>
     </div>
 
     <!-- Modal -->
@@ -163,18 +163,30 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
+            <form:form action="${pageContext.request.contextPath}/studentManagement/saveStudent" modelAttribute="student"
+                       method="POST" class="form-horizontal">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Available Courses</h4>
+                    <h4 class="modal-title">Add a Student</h4>
                 </div>
                 <div class="modal-body">
-                    <p>There are no available courses at the moment.</p>
+
+
+                    <form:input path="firstName" placeholder="First Name" class="form-control" />
+                    <form:input path="lastName" placeholder="Last Name" class="form-control" />
+
+
                 </div>
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
+
+
             </div>
+
+            </form:form>
 
         </div>
     </div>

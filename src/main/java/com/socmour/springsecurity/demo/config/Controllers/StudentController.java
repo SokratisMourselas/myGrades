@@ -33,9 +33,11 @@ public class StudentController {
     }
 
     @PostMapping("/saveStudent")
-    public String saveStudent(@Valid @ModelAttribute("crmUser") StudentFirstLastName student,
-                               BindingResult result,
-                               Model theModel){
+    public String saveStudent(@Valid @ModelAttribute("student") StudentFirstLastName student, BindingResult result){
+
+        if (result.hasErrors()){
+            return "home";
+        }
 
         Student newStudent = new Student(student.getFirstName(), student.getLastName(), Calendar.getInstance().getTime());
 
