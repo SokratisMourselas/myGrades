@@ -21,10 +21,10 @@
         body {
             position: relative;
         }
-        #section1 {padding-top:70px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
+        #section1 {padding-top:50px;height:500px;color: #000; background-color: rgba(137, 200, 229, 0.76);}
         #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(147, 42, 58);}
         #section3 {padding-top:50px;height:500px;color: #000; background-color: rgba(159, 135, 28, 0.54);}
-        #section41 {padding-top:50px;padding-bottom:50px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
+        #section41 {padding-top:70px;padding-bottom:50px;color: #fff; background-color: rgba(14, 0, 150, 0.75);}
         #section42 {padding-top:50px;height:500px;color: #fff; background-color: rgba(7, 94, 10, 0.8);}
     </style>
 </head>
@@ -78,29 +78,6 @@
         </div>
     </nav>
 
-
-    <div id="section1" class="container-fluid">
-        <h1>Welcome to your personal myGrades Account</h1>
-        <p>Security is our first concern and we update this website regularly to ensure you are always safe.</p>
-        <p>If at any point you encounter any issue, please <a href="#">contact our team</a> immediately.</p>
-    </div>
-    <div id="section2" class="container-fluid">
-        <h1>Your Classes</h1>
-        <p>You have been registered to the following classes in the past:</p><br>
-        <div class="container">
-            <h2>Complete history:</h2>
-            <div class="list-group">
-                <a href="#" class="list-group-item">5th Junior</a>
-                <a href="#" class="list-group-item">6th Junior</a>
-                <a href="#" class="list-group-item"><b>1st Senior <span> (Currently enrolled) </span> </b></a>
-            </div>
-        </div>
-    </div>
-    <div id="section3" class="container-fluid">
-        <h1>Current Lessons</h1>
-        <p>You are not currently enrolled in any lessons</p>
-        <p><a href="#" data-toggle="modal" data-target="#myModal">Add a Student</a></p>
-    </div>
     <div id="section41" class="container-fluid">
 
         <div id="myCarousel" class="carousel slide container" data-ride="carousel">
@@ -152,6 +129,29 @@
         </div>
 
     </div>
+
+    <div id="section1" class="container-fluid">
+        <h1>Welcome to your personal myGrades Account</h1>
+        <p>Security is our first concern and we update this website regularly to ensure you are always safe.</p>
+        <p>If at any point you encounter any issue, please <a href="#">contact our team</a> immediately.</p>
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Your Classes</h1>
+        <p>You have been registered to the following classes in the past:</p><br>
+        <div class="container">
+            <h2>Complete history:</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item">5th Junior</a>
+                <a href="#" class="list-group-item">6th Junior</a>
+                <a href="#" class="list-group-item"><b>1st Senior <span> (Currently enrolled) </span> </b></a>
+            </div>
+        </div>
+    </div>
+    <div id="section3" class="container-fluid">
+        <h1>Current Lessons</h1>
+        <p>You are not currently enrolled in any lessons</p>
+        <p><a href="#" data-toggle="modal" data-target="#myModal">Add a Student</a></p>
+    </div>
     <div id="section42" class="container-fluid">
         <h1>Current Projects</h1>
         <p>You do not have any pending Projects at the moment.</p>
@@ -168,13 +168,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add a Student</h4>
+                    <h4 class="modal-title">Add a Student:</h4>
                 </div>
                 <div class="modal-body">
 
 
-                    <form:input path="firstName" placeholder="First Name" class="form-control" />
-                    <form:input path="lastName" placeholder="Last Name" class="form-control" />
+                    <p>First name: <form:input path="firstName" placeholder="First Name" class="form-control" /></p>
+                    <p>Last name: <form:input path="lastName" placeholder="Last Name" class="form-control" /></p>
 
 
                 </div>
