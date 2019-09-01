@@ -20,6 +20,14 @@ public class DemoController {
         return "home";
     }
 
+    @GetMapping("/bookAppointment")
+    public String bookNewAppointment(Model theModel) {
+
+        theModel.addAttribute("student", new StudentFirstLastName());
+        return "appointmentsPage";
+    }
+
+
     @GetMapping("/students")
     public String showLeadersPage() {
         return "students-page";

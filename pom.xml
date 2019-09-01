@@ -122,7 +122,7 @@
 		</dependency>
 	</dependencies>
 
-	<!-- TO DO: Add support for Maven WAR Plugin -->
+	<!-- Add support for Maven WAR Plugin -->
 
 	<build>
 		<finalName>spring-security-demo</finalName>

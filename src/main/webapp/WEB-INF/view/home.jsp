@@ -134,6 +134,7 @@
         <h1>Welcome to your personal myGrades Account</h1>
         <p>Security is our first concern and we update this website regularly to ensure you are always safe.</p>
         <p>If at any point you encounter any issue, please <a href="#">contact our team</a> immediately.</p>
+        <p>If you would like to book an appointment, please <a href="${pageContext.request.contextPath}/bookAppointment">press here</a>.</p>
     </div>
     <div id="section2" class="container-fluid">
         <h1>Your Classes</h1>
