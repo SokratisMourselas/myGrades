@@ -19,11 +19,11 @@
 
 <!-- Roles -->
 <div style="margin-bottom: 25px">
-    <%--<form:form action="${pageContext.request.contextPath}/register/newAppointmentForm"--%>
-               <%--modelAttribute="newAppointment"--%>
-    <%-->--%>
-        <%--Available Dates and Times: <form:select path="formRole" items="${datesAndTimes}"/>--%>
-    <%--</form:form>--%>
+    <form:form action="${pageContext.request.contextPath}/register/newAppointmentForm"
+               modelAttribute="newAppointment"
+    >
+        Available Dates and Times: <form:select path="dateAndTime" items="${datesAndTimes}"/>
+    </form:form>
 </div>
 
 <a href="${pageContext.request.contextPath}/general">Go back to Home Page</a>
