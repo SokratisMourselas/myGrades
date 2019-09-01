@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: smoursel
@@ -11,10 +12,19 @@
     <title>Appointments Page</title>
 </head>
 <body>
-<h2>Appointments Page</h2>
+<h2>myGrades Appointment Portal</h2>
 <hr>
 
-<h3>myGrades Appointment Portal</h3>
+<h3>Book a new appointment</h3>
+
+<!-- Roles -->
+<div style="margin-bottom: 25px">
+    <%--<form:form action="${pageContext.request.contextPath}/register/newAppointmentForm"--%>
+               <%--modelAttribute="newAppointment"--%>
+    <%-->--%>
+        <%--Available Dates and Times: <form:select path="formRole" items="${datesAndTimes}"/>--%>
+    <%--</form:form>--%>
+</div>
 
 <a href="${pageContext.request.contextPath}/general">Go back to Home Page</a>
 
